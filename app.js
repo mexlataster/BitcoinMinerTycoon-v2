@@ -9,7 +9,7 @@ var path = require('path');
 
 var app = express();
 
-const route = require('./routes/route');
+const apiRoute = require('./routes/route');
 
 //connect do MongoDB
 mongoose.connect('mongodb://localhost:27017/contactlist');
@@ -38,7 +38,8 @@ app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
-app.use('/api', route);
+app.use('/api', apiRoute);
+app.use('/', route);
 
 
 //testing server
