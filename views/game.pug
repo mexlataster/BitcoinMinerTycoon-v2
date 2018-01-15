@@ -1,0 +1,11 @@
+html
+  head
+    title='game'
+  body
+    block content
+      .bottomMenu
+        block bottomMenu
+          each obj in data
+            case obj.attributes["data-type"]
+              when "img"
+                img(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"], src=obj.attributes["src"])

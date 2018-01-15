@@ -5,7 +5,6 @@ html
 	div
 	div
 		each obj in data
-			-	console.log(obj);
 			case obj.attributes["data-type"]
 				when "h1"
 					h1(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"])= obj.text[0].text

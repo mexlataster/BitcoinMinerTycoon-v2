@@ -16,6 +16,10 @@ const translationsAttributeSchema = mongoose.Schema({
 	"page": {
 		type: Array,
 		required: true
+	},
+	"src": {
+		type: String,
+		required: false
 	}
 });
 
