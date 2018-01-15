@@ -38,7 +38,6 @@ app.use(cors());
 app.set('view engine', 'pug');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
