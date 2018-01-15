@@ -24,6 +24,17 @@ router.get('/:dataName', (req, res, next)=>{
 	})
 });
 
+// Get translations
+router.get('/page/:pageName', (req, res, next)=>{
+	Translations.find({"attributes.page": req.params.pageName}, function(err,translations){
+		if(err){
+			res.send("error: " + err);
+		} else {
+			res.json(translations);
+		}
+	})
+});
+
 // Add/post translations
 router.post('/',(req, res, next)=>{
 	let newTranslation = new Translations({

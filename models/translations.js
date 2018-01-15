@@ -12,9 +12,13 @@ const translationsAttributeSchema = mongoose.Schema({
 	"classes": {
 		type: Array,
 		required: true
+	},
+	"page": {
+		type: Array,
+		required: true
 	}
 });
-	
+
 const translationsTextSchema = mongoose.Schema({
 	"language": {
 		type: String,
