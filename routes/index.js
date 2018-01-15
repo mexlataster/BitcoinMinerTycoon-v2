@@ -4,15 +4,13 @@ const request = require("request");
 const path = require("path");
 
 router.get('/',function(req,res){
-  request.get("localhost:3000/api/translations/h1_welcome_text", function(err,response,body) {
+  request.get("http://localhost:3000/api/translations/h2_welcome_text", function(err,response,body) {
     if(err){
-      res.render("index", {data: data});
+      res.render(err);
     } else {
-      res.send("test");
+      res.render("index", {data: JSON.parse(body)});
     }
   });
-  //res.render(path.join(__dirname+'/public/index'), {"person": person});
-  //__dirname : It will resolve to your project folder.
 });
 
 
