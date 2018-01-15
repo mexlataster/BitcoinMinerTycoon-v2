@@ -13,11 +13,17 @@ router.get('/', (req, res, next)=>{
 });
 
 
-// Get translations
+// Get specific translations
 router.get('/:dataName', (req, res, next)=>{
-	Translations.find({attributes: req.params.dataName}, function(err,translations){
-		res.json(translations);
+	Translations.find({'attributes.data-name': req.params.dataName}, function(err,translations){
+		if (err) {
+			res.send(err);
+		} else {
+			res.json(translations);
+		}
+		
 	})
+	 
 });
 
 

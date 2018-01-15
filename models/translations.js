@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const translationsAttributeSchema = mongoose.Schema({
+	"data-type":{
+		type: String,
+		required: true
+	},
 	"data-name": {
 		type: String,
 		required: true
