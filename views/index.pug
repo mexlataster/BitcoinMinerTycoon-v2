@@ -1,6 +1,13 @@
 html
 	head
 		title= 'Log in'
-		style
 	body
-		h1(class=data.attributes["classes"], "data-type"=data.attributes["data-type"], "data-name"=data.attributes["data-name"])= data.text[0].text
+	div
+	div
+		each obj in data
+			-	console.log(obj);
+			case obj.attributes["data-type"]
+				when "h1"
+					h1(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"])= obj.text[0].text
+				when "h2"
+					h2(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"])= obj.text[0].text

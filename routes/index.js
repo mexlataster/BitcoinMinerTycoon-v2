@@ -4,7 +4,7 @@ const request = require("request");
 const path = require("path");
 
 router.get('/',function(req,res){
-  request.get("http://localhost:3000/api/translations/h2_welcome_text", function(err,response,body) {
+  request.get("http://localhost:3000/api/translations/page/login", function(err,response,body) {
     if(err){
       res.render(err);
     } else {

@@ -19,7 +19,7 @@ router.get('/:dataName', (req, res, next)=>{
 		if(err){
 			res.send("error: " + err);
 		} else {
-			res.json(translations[0]);
+			res.json(translations);
 		}
 	})
 });
