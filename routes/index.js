@@ -6,7 +6,7 @@ const path = require("path");
 router.get('/',function(req,res){
   request.get("localhost:3000/api/translations/h1_welcome_text", function(err,response,body) {
     if(err){
-      res.render("Cannot get h1_welcome_text");
+      res.render("index", {data: data});
     } else {
       res.send("test");
     }
