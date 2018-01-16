@@ -1,11 +1,9 @@
 html
-	style
 	body(style={'background-image': 'url(https://images7.alphacoders.com/467/467811.jpg)', 'background-size': 'cover', 'background-repeat':'no-repeat', 'background-position':'center'})
 		block content
-			.bottomMenu(style={position:'fixed', bottom:'2%', left:'10%', background:'black'})
+			.bottomMenu(style={position:'fixed', bottom:'0%',left:'0%', background:'black', width:'100%'})
 				block bottomMenu
 					each obj in data
 						case obj.attributes["data-type"]
 							when "img"
-								img(style={height:100,background:'black',border:'1px solid black', margin: '5px'})(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"], src=obj.attributes["src"])
-								
+								img(style={height:60,background:'black',border:'1px solid black', margin: '5px'})(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"], src=obj.attributes["src"])
