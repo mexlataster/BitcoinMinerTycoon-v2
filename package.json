@@ -4,7 +4,8 @@
   "description": "Test mean stack installation",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "mexlataster",
   "license": "ISC",
@@ -13,6 +14,8 @@
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongoose": "^4.10.8",
-    "nodemon": "^1.14.9"
+    "nodemon": "^1.14.9",
+    "pug": "^2.0.0-rc.4",
+    "request": "^2.83.0"
   }
 }

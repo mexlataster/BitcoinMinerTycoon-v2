@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Contact = require('../models/contacts');
+const Contact = require('../../models/contacts');
 
 //****************//
 // Contacts Logic //
@@ -15,13 +15,14 @@ router.get('/', (req, res, next)=>{
 
 // Add/post contact
 router.post('/',(req, res, next)=>{
+	console.log(req.body);
 	let newContact = new Contact({
 		first_name: req.body.first_name,
 		last_name: req.body.last_name,
 		phone_number: req.body.phone_number
 	});
-		
-	
+
+
 	newContact.save((err, contact)=>{
 		if (err) {
 			res.json({msg: ' Failed to add Contact'});

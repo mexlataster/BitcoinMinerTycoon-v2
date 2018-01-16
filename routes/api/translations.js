@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Translations = require('../models/translations');
+const Translations = require('../../models/translations');
 
 //********************//
 // translations Logic //
@@ -15,11 +15,25 @@ router.get('/', (req, res, next)=>{
 
 // Get translations
 router.get('/:dataName', (req, res, next)=>{
-	Translations.find({attributes: req.params.dataName}, function(err,translations){
-		res.json(translations);
+	Translations.find({"attributes.data-name": req.params.dataName}, function(err,translations){
+		if(err){
+			res.send("error: " + err);
+		} else {
+			res.json(translations);
+		}
 	})
 });
 
+// Get translations
+router.get('/page/:pageName', (req, res, next)=>{
+	Translations.find({"attributes.page": req.params.pageName}, function(err,translations){
+		if(err){
+			res.send("error: " + err);
+		} else {
+			res.json(translations);
+		}
+	})
+});
 
 // Add/post translations
 router.post('/',(req, res, next)=>{
@@ -27,13 +41,9 @@ router.post('/',(req, res, next)=>{
 		text: req.body.text,
 		attributes: req.body.attributes
 	});
-	newTranslation.save((err, translation)=>{
-		if (err) {
-			res.json({msg: ' Failed to add Translation'});
-		} else {
-			res.json({msg: ' Translation has been added Succesfully'});;
-		}
-	});
+	newTranslation.save().then(function(item) {
+		res.send("saved to database");
+	})
 });
 
 // Delete translation

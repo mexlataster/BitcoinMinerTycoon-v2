@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const translationsAttributeSchema = mongoose.Schema({
+	"data-type":{
+		type: String,
+		required: true
+	},
 	"data-name": {
 		type: String,
 		required: true
@@ -8,9 +12,17 @@ const translationsAttributeSchema = mongoose.Schema({
 	"classes": {
 		type: Array,
 		required: true
+	},
+	"page": {
+		type: Array,
+		required: true
+	},
+	"src": {
+		type: String,
+		required: false
 	}
 });
-	
+
 const translationsTextSchema = mongoose.Schema({
 	"language": {
 		type: String,

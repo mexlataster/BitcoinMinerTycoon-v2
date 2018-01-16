@@ -1,0 +1,11 @@
+html
+	head
+		title= 'Log in'
+		style
+			include ../public/css/style.css
+	body
+	div
+	div
+		each obj in data
+			div(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"])
+				h1(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"])= obj.text[0].text

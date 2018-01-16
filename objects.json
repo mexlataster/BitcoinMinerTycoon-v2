@@ -1,0 +1,63 @@
+{
+	"text": [{
+			"language": "nl",
+			"text": "Log in"
+		},
+		{
+			"language": "eng",
+			"text": "Sign in"
+		}
+	],
+	"attributes": {
+		"data-name": "h1_sign_in",
+		"data-type": "h1",
+		"classes": ["sign_in_Button", "header"],
+		"page": ["login"]
+	}
+}
+
+{
+	"text": [{
+			"language": "nl",
+			"text": "Log in"
+		},
+		{
+			"language": "eng",
+			"text": "Sign in"
+		}
+	],
+	"attributes": {
+		"data-name": "button_sign_in",
+		"data-type": "button",
+		"classes": ["Sign_in_Button", "header"],
+		"page": ["login"]
+	}
+}
+
+{
+	"text": [{
+			"language": "nl",
+			"text": "Log in"
+		},
+		{
+			"language": "eng",
+			"text": "Sign in"
+		}
+	],
+	"attributes": {
+		"data-name": "h1_sign_in",
+		"data-type": "h1",
+		"classes": ["sign_in_Button", "header"],
+		"page": ["login"]
+	}
+}
+
+// Log in middle colum
+{
+	"attributes": {
+		"data-name": "div_sign_in",
+		"data-type": "div",
+		"classes": ["Middle_colum", "header"],
+		"page": ["login"]
+	}
+}
