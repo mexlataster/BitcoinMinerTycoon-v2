@@ -14,7 +14,7 @@ const route = require('./routes/');
 const apiRoute = require('./routes/api/');
 
 //connect do MongoDB
-//mongoose.connect('mongodb://localhost:27017/contactlist');
+mongoose.connect('mongodb://localhost:27017/contactlist');
 
 //if connection is made, display message
 mongoose.connection.on('connected',()=>{
