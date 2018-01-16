@@ -1,12 +1,11 @@
 html
 	head
 		title= 'Log in'
+		style
+			include ../public/css/style.css
 	body
 	div
 	div
 		each obj in data
-			case obj.attributes["data-type"]
-				when "h1"
-					h1(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"])= obj.text[0].text
-				when "h2"
-					h2(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"])= obj.text[0].text
+			div(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"])
+				h1(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"])= obj.text[0].text
