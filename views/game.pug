@@ -1,11 +1,11 @@
 html
-  head
-    title='game'
-  body
-    block content
-      .bottomMenu
-        block bottomMenu
-          each obj in data
-            case obj.attributes["data-type"]
-              when "img"
-                img(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"], src=obj.attributes["src"])
+	style
+	body(style={'background-image': 'url(https://images7.alphacoders.com/467/467811.jpg)', 'background-size': 'cover', 'background-repeat':'no-repeat', 'background-position':'center'})
+		block content
+			.bottomMenu(style={position:'fixed', bottom:'2%', left:'10%', background:'black'})
+				block bottomMenu
+					each obj in data
+						case obj.attributes["data-type"]
+							when "img"
+								img(style={height:100,background:'black',border:'1px solid black', margin: '5px'})(class=obj.attributes["classes"], "data-name"=obj.attributes["data-name"], src=obj.attributes["src"])
+								
