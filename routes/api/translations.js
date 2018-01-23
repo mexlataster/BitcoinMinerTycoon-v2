@@ -6,7 +6,7 @@ const Translations = require('../../models/translations');
 //********************//
 
 // Get translations
-router.get('/', (req, res, next)=>{
+router.get('/', req, res){
 	Translations.find(function(err,translations){
 		res.json(translations);
 	})
@@ -14,7 +14,7 @@ router.get('/', (req, res, next)=>{
 
 
 // Get translations
-router.get('/:dataName', (req, res, next)=>{
+router.get('/:dataName', req, res){
 	Translations.find({"attributes.data-name": req.params.dataName}, function(err,translations){
 		if(err){
 			res.send("error: " + err);
@@ -25,7 +25,7 @@ router.get('/:dataName', (req, res, next)=>{
 });
 
 // Get translations
-router.get('/page/:pageName', (req, res, next)=>{
+ router.get('/page/:pageName', req, res){
 	Translations.find({"attributes.page": req.params.pageName}, function(err,translations){
 		if(err){
 			res.send("error: " + err);
@@ -36,7 +36,7 @@ router.get('/page/:pageName', (req, res, next)=>{
 });
 
 // Add/post translations
-router.post('/',(req, res, next)=>{
+router.post('/',req, res{
 	let newTranslation = new Translations({
 		text: req.body.text,
 		attributes: req.body.attributes
@@ -47,7 +47,7 @@ router.post('/',(req, res, next)=>{
 });
 
 // Delete translation
-router.delete('/:dataName', (req, res, next)=>{
+router.delete('/:dataName', req, res){
 	Translations.remove({attributes: req.params.dataName}, function(err, result){
 		if (err) {
 			res.json(err);
